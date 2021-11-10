@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Stacks_and_Queues.Arrays;
+using Stacks_and_Queues.Dictionaries_And_Hashmaps;
 
 namespace Stacks_and_Queues
 {
@@ -22,7 +23,11 @@ namespace Stacks_and_Queues
 
             //Arrays
             //Run_New_Year_Chaos();
-            Run_Array_Manipulation();
+            //Run_Array_Manipulation();
+
+            //Dictionaries & Hashsets
+            //Run_Ransom_Note();
+            Run_Two_Strings();
 
             //String Manipulation
             //Run_Making_Anagrams();
@@ -32,6 +37,16 @@ namespace Stacks_and_Queues
             //Playground.DoSomething();
 
         }
+
+		private static void Run_Two_Strings()
+		{
+            Two_Strings.DoSomething();
+        }
+
+		private static void Run_Ransom_Note()
+		{
+            Ransom_Note.DoSomething();
+		}
 
 		private static void Run_Array_Manipulation()
 		{
