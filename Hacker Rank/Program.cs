@@ -27,7 +27,8 @@ namespace Stacks_and_Queues
 
             //Dictionaries & Hashsets
             //Run_Ransom_Note();
-            Run_Two_Strings();
+            //Run_Two_Strings();
+            Run_Sherlock_And_Anagrams();
 
             //String Manipulation
             //Run_Making_Anagrams();
@@ -35,6 +36,12 @@ namespace Stacks_and_Queues
 
 
             //Playground.DoSomething();
+
+        }
+
+		private static void Run_Sherlock_And_Anagrams()
+		{
+            Sherlock_And_Anagrams.DoSomething();
 
         }
 
