@@ -12,6 +12,7 @@ namespace Test
 		public StreamReader answers;
 		public Balanced_Brackets_Should()
 		{
+			Directory dir = new Directory()
 			input = new StreamReader(@"input.txt");
 			answers = new StreamReader(@"answers.txt");
 		}

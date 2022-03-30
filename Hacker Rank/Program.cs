@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using Stacks_and_Queues.Arrays;
 using Stacks_and_Queues.Dictionaries_And_Hashmaps;
+using Stacks_and_Queues.Amazon;
+using Stacks_and_Queues.Interview;
 
 namespace Stacks_and_Queues
 {
@@ -28,14 +30,15 @@ namespace Stacks_and_Queues
             //Dictionaries & Hashsets
             //Run_Ransom_Note();
             //Run_Two_Strings();
-            Run_Sherlock_And_Anagrams();
+            //Run_Sherlock_And_Anagrams();
 
             //String Manipulation
             //Run_Making_Anagrams();
             //Run_Alternating_Characters();
 
-
-            //Playground.DoSomething();
+            //Palindrome.DoSomething();
+            //Num_Steps.DoSomething();
+            Playground.DoSomething();
 
         }
 
