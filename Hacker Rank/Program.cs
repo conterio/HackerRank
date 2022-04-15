@@ -40,7 +40,10 @@ namespace Stacks_and_Queues
             //Palindrome.DoSomething();
             //Num_Steps.DoSomething();
             //MergeLinkedList.DoSomething();
-            LevelOrderTraversalOfBinaryTree.DoSomething();
+            //LevelOrderTraversalOfBinaryTree.DoSomething();
+            //StringSegmenation.DoSomething();
+            //CoinDenominations.DoSomething();
+            KthPermutation.DoSomething();
 
 
 

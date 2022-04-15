@@ -34,18 +34,26 @@ namespace Stacks_and_Queues.Interview
 			tree.Add(60);
 
 
+			int searchValue = 60;
+			var result = tree.DoesExistDFS(searchValue);
+
+			tree.PrintTrueUsingBFS(tree.Root);
+			var node = tree.Find(15);
+			node.Data = 5;
+			tree.PrintTrueUsingBFS(tree.Root);
+
+			result = tree.IsBST(tree.Root);
 
 
+			
+			//tree.DFS(tree.Root);
+			//Console.WriteLine();
 
-			//tree.PrintTrueUsingBFS(tree.Root);
-			tree.DFS(tree.Root);
-			Console.WriteLine();
-
-			tree.TraverseInOrder(tree.Root);
-			Console.WriteLine();
-			tree.TraversePreOrder(tree.Root);
-			Console.WriteLine();
-			tree.TraversePostOrder(tree.Root);
+			//tree.TraverseInOrder(tree.Root);
+			//Console.WriteLine();
+			//result = tree.TraversePreOrder(tree.Root, 60);
+			//Console.WriteLine();
+			//tree.TraversePostOrder(tree.Root);
 
 		}
 	}

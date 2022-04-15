@@ -158,6 +158,75 @@ namespace Stacks_and_Queues.DataStructures
             Console.WriteLine(result);
 		}
 
+        public bool DoesExistDFS(int value)
+		{
+            Stack<Node> stack = new Stack<Node>();
+            HashSet<int> visited = new HashSet<int>();
+
+            stack.Push(this.Root);
+
+            while (stack.Count > 0)
+			{
+                var node = stack.Peek();
+
+                if (node.Data == value)
+				{
+                    return true;
+				}
+
+                if (visited.Contains(node.Data))
+				{
+                    stack.Pop();
+				}
+				else
+				{
+                    visited.Add(node.Data);
+
+                    if (node.RightNode != null && !visited.Contains(node.RightNode.Data))
+					{
+                        stack.Push(node.RightNode);
+					}
+                    if (node.LeftNode != null && !visited.Contains(node.LeftNode.Data))
+					{
+                        stack.Push(node.LeftNode);
+					}
+				}
+			}
+
+
+            return false;
+		}
+
+
+        //returns true if value exists in the tree using BFS
+        public bool DoesExist(int value)
+		{
+            //bfs
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(this.Root);
+
+            while (queue.Count > 0)
+			{
+                var node = queue.Dequeue();
+
+                if (node.Data == value)
+				{
+                    return true;
+				}
+
+                if (node.LeftNode != null)
+				{
+                    queue.Enqueue(node.LeftNode);
+				}
+                if (node.RightNode != null)
+				{
+                    queue.Enqueue(node.RightNode);
+				}
+			}
+
+            return false;
+		}
+
 
 
         public void DFS(Node root)
@@ -194,16 +263,21 @@ namespace Stacks_and_Queues.DataStructures
 			}
         }
 
-
-        public void TraversePreOrder(Node parent)
+        public bool TraversePreOrder(Node parent, int value)
         {
             if (parent != null)
             {
                 Console.Write(parent.Data + " ");
-                TraversePreOrder(parent.LeftNode);
-                TraversePreOrder(parent.RightNode);
+                if (parent.Data == value)
+                    return true;
+                var result = TraversePreOrder(parent.LeftNode, value);
+                if (result)
+                    return result;
+                return TraversePreOrder(parent.RightNode, value);
             }
+            return false;
         }
+
 
         public void TraverseInOrder(Node parent)
         {
@@ -224,6 +298,80 @@ namespace Stacks_and_Queues.DataStructures
                 Console.Write(parent.Data + " ");
             }
         }
+
+
+        //time O(n) traverse each node once worst case senarnio space complexity O(n)
+        public bool IsBST(Node node)
+		{
+            //validation
+            if (node == null)
+			{
+                return false;
+			}
+
+            //check children
+            if (node.LeftNode != null)
+			{
+                if (node.LeftNode.Data > node.Data)
+				{
+                    return false;
+                }
+                //repeat
+                 return IsBST(node.LeftNode);
+			}
+            if (node.RightNode != null)
+			{
+                if (node.RightNode.Data < node.Data)
+				{
+                    return false;
+                }
+                //repeat
+                return IsBST(node.RightNode);
+			}
+
+            return true;
+		}
+
+
+
+
+        public bool FindAssumingBST(int value)
+		{
+            Node node = this.Root;
+
+            while (node != null)
+			{
+                if (node.Data < value)
+				{
+                    node = node.LeftNode;
+				}
+				else if (node.Data > value)
+				{
+                    node = node.RightNode;
+				}
+                else
+				{
+                    return true;
+				}
+			}
+
+            return false;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public class Node
         {
