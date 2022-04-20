@@ -8,19 +8,19 @@ namespace Stacks_and_Queues.Interview
 {
 	public static class KthPermutation
 	{
-		private static int count = 0;
 		public static void DoSomething()
 		{
 			FindPerm(new List<char> { 'a', 'b', 'c' }, 3, "");
-			var result = Permutation("abcd");
+
+			FindMissingNubmer(new[] { 3, 7, 1, 2, 8, 4, 5 });
 		}
 
-		private static void FindPerm(List<char> list, int v1, string v2)
+		private static void FindPerm(List<char> list, int permAtIndex, string v2)
 		{
 			string input = new string(list.ToArray());
 			var permutations = Permutation(input);
 
-			Console.WriteLine(permutations[v1]);
+			Console.WriteLine(permutations[permAtIndex]);
 		}
 
 
@@ -41,12 +41,6 @@ namespace Stacks_and_Queues.Interview
 			if (string.IsNullOrEmpty(rest))
 			{
 				result.Add(prefix);
-				++count;
-
-				if (count == 3)
-				{
-					Console.WriteLine(prefix);
-				}
 			}
 
 			for (int i = 0; i < rest.Length; i++)
@@ -55,6 +49,22 @@ namespace Stacks_and_Queues.Interview
 			}
 
 			return result;
+		}
+
+
+
+		//O(2n)  O(n)
+		private static void FindMissingNubmer(int[] arr)
+		{
+			var expectedSum = 0;// number * (number + 1) / 2;
+			for (int j = 1; j <= arr.Length + 1; ++j)
+			{
+				expectedSum += j;
+			}
+			var actualSum = arr.Sum();
+
+			var result = expectedSum - actualSum;
+
 		}
 
 	}

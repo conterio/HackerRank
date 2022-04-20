@@ -1,16 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Stacks_and_Queues
 {
 	public static class A_Tale_Of_Two_Stacks
 	{
+
+		public static void DoSomething()
+		{
+			StreamReader input = new StreamReader(@"two_stacks.txt");
+			var count = int.Parse(input.ReadLine());
+			for (int i = 0; i < count; ++i)
+			{
+				var line = input.ReadLine();
+				TwoSTacks(line);
+			}
+		}
+
+
 		//enque stack just takes in the pushed items
 		public static Stack<int> EnqueStack = new Stack<int>();
 		//deque just peeks and pops
 		public static Stack<int> DequeStack = new Stack<int>();
 		
-		public static void DoSomething(string line)
+		private static void TwoSTacks(string line)
 		{
 			var items = line.Split(' ');
 

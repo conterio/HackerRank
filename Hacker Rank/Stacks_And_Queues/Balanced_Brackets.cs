@@ -9,7 +9,11 @@ namespace Stacks_and_Queues
 {
 	public static class Balanced_Brackets
 	{
-		public static string isBalanced(string s)
+		public static void DoSomething()
+		{
+			var result = IsBalanced("{[()]}");
+		}
+		private static string IsBalanced(string s)
 		{
 
 			if (s.StartsWith("}") || s.StartsWith("]") || s.StartsWith(")"))

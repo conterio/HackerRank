@@ -12,11 +12,47 @@ namespace Stacks_and_Queues
 
 		public static void DoSomething()
 		{
-
-
-			ReverseWords();
+			var result = Fib(100);
 
 		}
+
+		//O(n) memory complexity O(3*64bits)
+		private static ulong Fib(ulong n)
+		{
+			Dictionary<ulong, ulong> cache = new Dictionary<ulong, ulong>();
+
+			cache[0] = 0;
+			cache[1] = 1;
+			cache[2] = 1;
+
+			//[0]=0 = 1
+			//[1]=1 = 2
+			//[2]=1
+			int count = 1;
+			while ((ulong)count < n)
+			{
+				++count;
+				//cache[(ulong)cache.Count] = cache[(ulong)cache.Count - 1] + cache[(ulong)cache.Count - 2];
+
+				cache[2] = cache[0] + cache[1];
+				cache[0] = cache[1];
+				cache[1] = cache[2];
+			}
+			//if (n == 0)
+			//	return 0;
+			//else if (n == 1)
+			//	return 1;
+			//else
+			//	return Fib(n - 1) + Fib(n - 2);
+
+			return cache[2];
+		}
+
+
+
+
+
+
 
 		private static void ReverseWords()
 		{
@@ -33,12 +69,6 @@ namespace Stacks_and_Queues
 
 			result = result.Trim();
 		}
-
-		static void IsBinarySearchTree()
-		{
-
-		}
-
 
 		static LinkedList<int> MergeLinkedList()
 		{
@@ -62,9 +92,7 @@ namespace Stacks_and_Queues
 			//time complexity O(n)
 			return new LinkedList<int>(first.OrderBy(x => x));
 
-
 		}
-
 
 		static void SumOf2Numbers()
 		{
@@ -109,14 +137,6 @@ namespace Stacks_and_Queues
 
 			var ans = act - sum;
 		}
-
-
-
-
-
-
-
-
 
 
 	}

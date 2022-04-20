@@ -10,8 +10,8 @@ namespace Stacks_and_Queues.Interview
 	{
 		public static void DoSomething()
 		{
-			//Segmenation("foobarbuzzPop", new HashSet<string>() { "bar", "buzz", "foo" });
-			reverseString(new char[] {'t','e','s','t','i','n','g' });
+			Segmenation("foobarbuzzPop", new HashSet<string>() { "bar", "buzz", "foo" });
+			//reverseString(new char[] {'t','e','s','t','i','n','g' });
 		}
 
 		//input string must be fully in the dictionary, but the dictionary doesn't need to all be used up

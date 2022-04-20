@@ -8,6 +8,7 @@ using Stacks_and_Queues.Arrays;
 using Stacks_and_Queues.Dictionaries_And_Hashmaps;
 using Stacks_and_Queues.Amazon;
 using Stacks_and_Queues.Interview;
+using Stacks_and_Queues.DataStructures;
 
 namespace Stacks_and_Queues
 {
@@ -16,25 +17,25 @@ namespace Stacks_and_Queues
         static void Main(string[] args)
         {
             //Stacks & Queues
-            //Run_Balanced_Brackets();
-            //Run_Two_Stacks();
-            //Run_Largest_Rectangle();
-            //Run_Min_Max_Riddle();
-            //Run_Castle_On_The_Grid();
-            //Run_Poisonous_Plants();
+            //Balanced_Brackets.DoSomething();
+            //A_Tale_Of_Two_Stacks.DoSomething();
+            //Largest_Rectangle.DoSomething();
+            //Min_Max_Riddle.DoSomething();
+            //Castle_On_The_Grid.DoSomething();
+            //Poisonous_Plants.DoSomething();
 
             //Arrays
-            //Run_New_Year_Chaos();
-            //Run_Array_Manipulation();
+            //New_Year_Chaos.DoSomething();
+            //Array_Manipulation.DoSomething();
 
             //Dictionaries & Hashsets
-            //Run_Ransom_Note();
-            //Run_Two_Strings();
-            //Run_Sherlock_And_Anagrams();
+            //Ransom_Note.DoSomething();
+            //Two_Strings.DoSomething();
+            //Sherlock_And_Anagrams.DoSomething();
 
             //String Manipulation
-            //Run_Making_Anagrams();
-            //Run_Alternating_Characters();
+            //Making_Anagrams.DoSomething();
+            //Alternating_Characters.DoSomething();
 
             //interview questions
             //Palindrome.DoSomething();
@@ -43,96 +44,17 @@ namespace Stacks_and_Queues
             //LevelOrderTraversalOfBinaryTree.DoSomething();
             //StringSegmenation.DoSomething();
             //CoinDenominations.DoSomething();
-            KthPermutation.DoSomething();
+            //KthPermutation.DoSomething();
+            //FindAllSubsets.DoSomething();
+            //PossibleBrackets.DoSomething();
+            //FindHighLow.DoSomething();
+            NQueens.DoSomething();
 
-
+            //Queens queen = new Queens();
 
             //Playground.DoSomething();
-
         }
-
-		private static void Run_Sherlock_And_Anagrams()
-		{
-            Sherlock_And_Anagrams.DoSomething();
-
-        }
-
-		private static void Run_Two_Strings()
-		{
-            Two_Strings.DoSomething();
-        }
-
-		private static void Run_Ransom_Note()
-		{
-            Ransom_Note.DoSomething();
-		}
-
-		private static void Run_Array_Manipulation()
-		{
-            Array_Manipulation.DoSomething();
-
-        }
-
-		private static void Run_New_Year_Chaos()
-		{
-            New_Year_Chaos.DoSomething();
-		}
-
-		private static void Run_Poisonous_Plants()
-		{
-            Poisonous_Plants.DoSomething();
-
-        }
-
-		private static void Run_Alternating_Characters()
-		{
-            Alternating_Characters.DoSomething();
-		}
-
-		private static void Run_Making_Anagrams()
-		{
-            Making_Anagrams.DoSomething();
-		}
-
-		private static void Run_Castle_On_The_Grid()
-		{
-            Castle_On_The_Grid.DoSomething();
-		}
-
-		private static void Run_Min_Max_Riddle()
-		{
-            Min_Max_Riddle.DoSomething();
-		}
-
-		private static void Run_Largest_Rectangle()
-		{
-            Largest_Rectangle.DoSomething();
-		}
-
-		private static void Run_Two_Stacks()
-		{
-            StreamReader input = new StreamReader(@"two_stacks.txt");
-            var count = int.Parse(input.ReadLine());
-            for (int i = 0; i < count; ++i)
-            {
-                var line = input.ReadLine();
-                A_Tale_Of_Two_Stacks.DoSomething(line);
-            }
-        }
-
-		private static void Run_Balanced_Brackets()
-		{
-            var result = Balanced_Brackets.isBalanced("{[()]}");
-        }
-
 
 
 	}//
 }//
-
-
-
-/*
-        string line;
-        while ((line = Console.ReadLine()) != null && line != "") {}
-*/
