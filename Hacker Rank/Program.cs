@@ -48,7 +48,12 @@ namespace Stacks_and_Queues
             //FindAllSubsets.DoSomething();
             //PossibleBrackets.DoSomething();
             //FindHighLow.DoSomething();
-            NQueens.DoSomething();
+            //NQueens.DoSomething();
+
+            //sorting
+            //BubbleSort.DoSomething();
+            //SelectionSort.DoSomething();
+            InsertionSort.DoSomething();
 
             //Queens queen = new Queens();
 

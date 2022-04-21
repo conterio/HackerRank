@@ -10,12 +10,11 @@ namespace Stacks_and_Queues.Interview
 	{
 		public static void DoSomething()
 		{
-            int dim;
 
 			for (int i = 0; i < 100; ++i)
 			{
                 int[,] board = new int[i, i];
-                var result = SolveNQueens(board, 0);
+                var result = SolveNQueens(board);
 
                 Console.WriteLine($"{i}x{i} is {result}");
             }
@@ -24,38 +23,27 @@ namespace Stacks_and_Queues.Interview
         }
 
 
-		private static bool SolveNQueens(int[,] board, int col)
+		private static bool SolveNQueens(int[,] board, int col = 0)
         {
             int n = board.GetLength(0);
-            /* base case: If all queens are placed
-            then return true */
-            if (col >= n)
+
+            if (col == n)
                 return true;
 
-            /* Consider this column and try placing
-            this queen in all rows one by one */
             for (int i = 0; i < n; i++)
             {
-                /* Check if the queen can be placed on
-                board[i,col] */
+
                 if (isSafe(board, i, col))
                 {
-                    /* Place this queen in board[i,col] */
                     board[i, col] = 1;
 
-                    /* recur to place rest of the queens */
                     if (SolveNQueens(board, col + 1) == true)
                         return true;
 
-                    /* If placing queen in board[i,col]
-                    doesn't lead to a solution then
-                    remove queen from board[i,col] */
-                    board[i, col] = 0; // BACKTRACK
+                    board[i, col] = 0;
                 }
             }
 
-            /* If the queen can not be placed in any row in
-            this column col, then return false */
             return false;
         }
 
@@ -66,19 +54,21 @@ namespace Stacks_and_Queues.Interview
             int i, j;
 
             /* Check this row on left side */
-            for (i = 0; i < col; i++)
+            for (i = col; i >= 0; i--)
+            {
                 if (board[row, i] == 1)
                     return false;
+            }
 
             /* Check upper diagonal on left side */
-            for (i = row, j = col; i >= 0 &&
-                 j >= 0; i--, j--)
+            for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
+            {
                 if (board[i, j] == 1)
                     return false;
+            }
 
             /* Check lower diagonal on left side */
-            for (i = row, j = col; j >= 0 &&
-                          i < n; i++, j--)
+            for (i = row, j = col; j >= 0 && i < n; i++, j--)
                 if (board[i, j] == 1)
                     return false;
 
