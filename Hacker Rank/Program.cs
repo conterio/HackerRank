@@ -56,6 +56,9 @@ namespace Stacks_and_Queues
             //InsertionSort.DoSomething();
             //QuickSort.Dosomething();
             //MergeSort.DoSomething();
+            //BinarySearch.DoSomething();
+            //HeapSort.DoSomething();
+
 
             //Queens queen = new Queens();
 
