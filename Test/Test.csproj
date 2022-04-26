@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hacker Rank\HackerRank.csproj" />
-    <ProjectReference Include="..\Stacks and Queues\HackerRank.csproj" />
   </ItemGroup>
 
 </Project>

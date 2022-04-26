@@ -13,8 +13,8 @@ namespace Stacks_and_Queues.Amazon
 
 		public RegularExpressions()
 		{
-			string str = "A Thousand Splendid Suns";
-			var beginsWithS = @"\bS\S*";
+			//string str = "A Thousand Splendid Suns";
+			//var beginsWithS = @"\bS\S*";
 			//Splendid
 			//Suns
 
@@ -22,9 +22,9 @@ namespace Stacks_and_Queues.Amazon
 			// test123 @ amazon . com
 
 
-			var pattern = @"[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-z-A-Z]{2,18}";
+			//var pattern = @"[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-z-A-Z]{2,18}";
 
-			var emailPattern = @"[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,18}";
+			//var emailPattern = @"[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,18}";
 		}
 
 		/*

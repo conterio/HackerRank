@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime;
+using System.Text.RegularExpressions;
 
 namespace Stacks_and_Queues
 {
@@ -12,8 +13,25 @@ namespace Stacks_and_Queues
 
 		public static void DoSomething()
 		{
-			var result = Fib(100);
+			var c = ParseString("aabbccdd!3880afj8vad;lkjsdfvasn;euarpifd");
 
+		}
+
+		//time complexity: worst case O(n) best case O(log(n)) memorycomplexity O(1)
+		private static char ParseString(string input)
+		{
+			Dictionary<char, int> map = new Dictionary<char, int>();
+
+			foreach (var character in input)
+			{
+				if (!map.TryAdd(character, 1))
+				{
+					map[character] += 1;
+					input = Regex.Replace(input, @$"{character}", "");
+				}
+			}
+
+			return map.FirstOrDefault(x => x.Value == 1).Key;
 		}
 
 		//O(n) memory complexity O(3*64bits)
@@ -47,11 +65,6 @@ namespace Stacks_and_Queues
 
 			return cache[2];
 		}
-
-
-
-
-
 
 
 		private static void ReverseWords()

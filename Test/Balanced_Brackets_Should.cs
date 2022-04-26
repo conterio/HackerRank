@@ -12,7 +12,7 @@ namespace Test
 		public StreamReader answers;
 		public Balanced_Brackets_Should()
 		{
-			Directory dir = new Directory()
+			//Directory dir = new Directory();
 			input = new StreamReader(@"input.txt");
 			answers = new StreamReader(@"answers.txt");
 		}
@@ -21,7 +21,7 @@ namespace Test
 		[InlineData("{{}(", "NO")]
 		public void Handle_Case_With_Extra_Characters(string s, string expected)
 		{
-			var result = Balanced_Brackets.isBalanced(s);
+			var result = Balanced_Brackets.IsBalanced(s);
 
 			Assert.Equal(expected, result);
 		}
@@ -37,7 +37,7 @@ namespace Test
 				var inputLine = input.ReadLine();
 				var answerLine = answers.ReadLine();
 
-				var result = Balanced_Brackets.isBalanced(inputLine);
+				var result = Balanced_Brackets.IsBalanced(inputLine);
 
 				Assert.Equal(answerLine, result);
 			}

@@ -53,11 +53,13 @@ namespace Stacks_and_Queues
             //sorting
             //BubbleSort.DoSomething();
             //SelectionSort.DoSomething();
-            InsertionSort.DoSomething();
+            //InsertionSort.DoSomething();
+            //QuickSort.Dosomething();
+            //MergeSort.DoSomething();
 
             //Queens queen = new Queens();
 
-            //Playground.DoSomething();
+            Playground.DoSomething();
         }
 
 

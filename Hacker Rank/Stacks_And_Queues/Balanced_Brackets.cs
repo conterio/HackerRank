@@ -13,7 +13,7 @@ namespace Stacks_and_Queues
 		{
 			var result = IsBalanced("{[()]}");
 		}
-		private static string IsBalanced(string s)
+		public static string IsBalanced(string s)
 		{
 
 			if (s.StartsWith("}") || s.StartsWith("]") || s.StartsWith(")"))
