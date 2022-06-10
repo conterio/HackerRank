@@ -263,19 +263,14 @@ namespace Stacks_and_Queues.DataStructures
 			}
         }
 
-        public bool TraversePreOrder(Node parent, int value)
+        public void TraversePreOrder(Node parent)
         {
             if (parent != null)
             {
                 Console.Write(parent.Data + " ");
-                if (parent.Data == value)
-                    return true;
-                var result = TraversePreOrder(parent.LeftNode, value);
-                if (result)
-                    return result;
-                return TraversePreOrder(parent.RightNode, value);
+                TraversePreOrder(parent.LeftNode);
+                TraversePreOrder(parent.RightNode);
             }
-            return false;
         }
 
 

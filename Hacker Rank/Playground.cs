@@ -5,21 +5,83 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime;
 using System.Text.RegularExpressions;
+using System.Reflection;
+using System.Collections;
 
 namespace Stacks_and_Queues
 {
-	public static class Playground
+	class Playground
 	{
+
+		private delegate void print(string s, int a = 5);
 
 		public static void DoSomething()
 		{
-			var c = ParseString("aabbccdd!3880afj8vad;lkjsdfvasn;euarpifd");
+
+			string[] arr = new string[]{"for", "", "", "", "geeks", "ide", "", "practice", "" , "", "quiz", "", ""};
+
+			List<string> list = new List<string>(arr);
+
+			var index = list.IndexOf("quiz");
+
+			string temp = "abcdabc";
+			Dictionary<char, int> dictionary = new Dictionary<char, int>();
+
+			foreach (var character in temp)
+			{
+				if (!dictionary.TryAdd(character, 1))
+				{
+					dictionary[character] += 1;
+				}
+			}
+
+			var result = dictionary.FirstOrDefault(x => x.Value == 1);
+
+			temp = "0129234567890";
+			string pattern = @"^[0-9]+$";
+
+			var digits = Regex.IsMatch(temp, pattern);
+
+			Int64.TryParse(temp, out var num);
 
 		}
+
+		public int pr(string s, int l)
+		{
+			return 0;
+		}
+
+		public static void ABCD()
+		{
+			
+		}
+
+		public static void ABC()
+		{
+			string a = null;
+			try
+			{
+				Console.WriteLine(a[7]);
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+			
+			
+		}
+
+		
+
+
+
+
 
 		//time complexity: worst case O(n) best case O(log(n)) memorycomplexity O(1)
 		private static char ParseString(string input)
 		{
+
 			Dictionary<char, int> map = new Dictionary<char, int>();
 
 			foreach (var character in input)
